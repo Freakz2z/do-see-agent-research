@@ -5,9 +5,9 @@
     "configs/p12_fault_conditioned_public_plan_v1.json"
   ],
   "figures": {
-    "fig1_do_not_equal_see.svg": "a72256731606844a8188857be8ef3ebcc261a3c4de66fc4355a4f31808c3fc68",
-    "fig2_p11b_opportunity_funnel.svg": "bf2918382818480483ccd32c86e1ce92f26eb7e5f58a66444e9c99ef302301a4",
-    "fig3_p12_fault_conditioned_design.svg": "cf6ac7fde767ed5abdc663e346ee1b72ba8889b79f7215f9ac9d3e948d6fe89f"
+    "fig1_do_not_equal_see.svg": "bddcf7c8c9db50dcf9609739d04dd8f46528ba81f9028c117f43ab4ce4792b72",
+    "fig2_p11b_opportunity_funnel.svg": "97d911abdf52dc0694466858f8406a7e6a61fe59656bc981f50daee69500b66f",
+    "fig3_p12_fault_conditioned_design.svg": "8a5760cde9fed6ece83aeb2d0e0070ef5768c4a313aa191ad3c305439d120c0a"
   },
   "generator": "scripts/generate_public_figures.py",
   "claim_boundary": "Figures use public aggregate/design metadata only; no raw behavioral content is rendered."

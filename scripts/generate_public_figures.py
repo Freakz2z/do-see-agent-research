@@ -69,17 +69,18 @@ def save(fig: plt.Figure, stem: str) -> None:
     # Strip/normalise both so the public figure manifest is reproducible.
     svg = svg_path.read_text(encoding="utf-8")
     svg = re.sub(r"\s*<dc:date>.*?</dc:date>", "", svg, flags=re.DOTALL)
-    clip_ids = []
+    random_ids = []
 
-    def replace_clip(match: re.Match[str]) -> str:
+    def replace_random_id(match: re.Match[str]) -> str:
         old = match.group(1)
-        if old not in clip_ids:
-            clip_ids.append(old)
-        return f'id="clip_path_{clip_ids.index(old) + 1}"'
+        if old not in random_ids:
+            random_ids.append(old)
+        return f'id="mpl_resource_{random_ids.index(old) + 1}"'
 
-    svg = re.sub(r'id="(p[0-9a-f]+)"', replace_clip, svg)
-    for index, old in enumerate(clip_ids, start=1):
-        svg = svg.replace(f"url(#{old})", f"url(#clip_path_{index})")
+    svg = re.sub(r'id="([pm][0-9a-f]{6,})"', replace_random_id, svg)
+    for index, old in enumerate(random_ids, start=1):
+        for ref in (f"url(#{old})", f"xlink:href=\"#{old}\"", f"href=\"#{old}\""):
+            svg = svg.replace(ref, ref.replace(old, f"mpl_resource_{index}"))
     svg = "\n".join(line.rstrip() for line in svg.splitlines()) + "\n"
     svg_path.write_text(svg, encoding="utf-8")
     plt.close(fig)
