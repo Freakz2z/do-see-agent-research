@@ -1,0 +1,14 @@
+{
+  "format": "dosee.public-figure-manifest.v1",
+  "source_files": [
+    "results/p11b_public_aggregate_v1.json",
+    "configs/p12_fault_conditioned_public_plan_v1.json"
+  ],
+  "figures": {
+    "fig1_do_not_equal_see.svg": "2dab1278f259b428a72b1373b2e163921f6c67ee2e5b0047c29a743a0e4a4765",
+    "fig2_p11b_opportunity_funnel.svg": "ee51e275f693ecb299f9c4d8fe2c879685dd135454fa12a619dd6c4647a6e6c7",
+    "fig3_p12_fault_conditioned_design.svg": "5aa4b34e10346e439d36aa9145aff0e9d0b9afba26fe1b24f6ce5921e7fe43e9"
+  },
+  "generator": "scripts/generate_public_figures.py",
+  "claim_boundary": "Figures use public aggregate/design metadata only; no raw behavioral content is rendered."
+}

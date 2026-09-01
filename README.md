@@ -19,6 +19,43 @@ same-prefix evidence arms. The first four-prefix pilot is excluded from the
 confirmatory estimate; the live pilot and raw behavioral traces are not part
 of this public release.
 
+## Figures at a glance
+
+The release includes three publication-style figures. They are generated from
+the public aggregate and design JSON files only; no raw behavioral content is
+rendered.
+
+![Do not equal see: causal schematic](figures/fig1_do_not_equal_see.svg)
+
+**Figure 1. Do ≠ See.** A successful local receipt can remain visible after a
+protected target becomes false. P12 holds the receipt fixed and varies the
+evidence available before the submit/hold decision. The editable source is
+[fig1_do_not_equal_see.drawio](figures/fig1_do_not_equal_see.drawio).
+
+![P11-B opportunity funnel and quadrants](figures/fig2_p11b_opportunity_funnel.svg)
+
+**Figure 2. P11-B ordinary-prefix census.** The dangerous proxy-positive /
+target-false cell is empty (0), so the natural-opportunity route cannot
+estimate false approval. The full aggregate is available at
+[results/p11b_public_aggregate_v1.json](results/p11b_public_aggregate_v1.json).
+
+![P12 fault-conditioned authorization design](figures/fig3_p12_fault_conditioned_design.svg)
+
+**Figure 3. P12 design.** Four trusted post-receipt fault families are paired
+with six evidence arms. The pilot is excluded from confirmation, and no live
+P12 behavioral result is claimed in this release. The editable source is
+[fig3_p12_fault_conditioned_design.drawio](figures/fig3_p12_fault_conditioned_design.drawio).
+
+To regenerate the figures locally (optional):
+
+```bash
+python3 -m pip install 'matplotlib>=3.8,<4'
+python3 scripts/generate_public_figures.py
+```
+
+See [figures/README.md](figures/README.md) for the figure manifest and design
+notes.
+
 ## Reproduce the provider-free checks
 
 ```bash
