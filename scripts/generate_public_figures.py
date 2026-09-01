@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 from xml.sax.saxutils import escape
 
@@ -63,8 +64,26 @@ def style() -> None:
 
 def save(fig: plt.Figure, stem: str) -> None:
     FIG_DIR.mkdir(parents=True, exist_ok=True)
-    fig.savefig(FIG_DIR / f"{stem}.svg", bbox_inches="tight", pad_inches=0.18)
+    svg_path = FIG_DIR / f"{stem}.svg"
+    fig.savefig(svg_path, bbox_inches="tight", pad_inches=0.18)
     fig.savefig(FIG_DIR / f"{stem}.png", dpi=300, bbox_inches="tight", pad_inches=0.18)
+    # Matplotlib embeds a wall-clock date and a random clip-path id in SVG.
+    # Strip/normalise both so the public figure manifest is reproducible.
+    svg = svg_path.read_text(encoding="utf-8")
+    svg = re.sub(r"\s*<dc:date>.*?</dc:date>", "", svg, flags=re.DOTALL)
+    clip_ids = []
+
+    def replace_clip(match: re.Match[str]) -> str:
+        old = match.group(1)
+        if old not in clip_ids:
+            clip_ids.append(old)
+        return f'id="clip_path_{clip_ids.index(old) + 1}"'
+
+    svg = re.sub(r'id="(p[0-9a-f]+)"', replace_clip, svg)
+    for index, old in enumerate(clip_ids, start=1):
+        svg = svg.replace(f"url(#{old})", f"url(#clip_path_{index})")
+    svg = "\n".join(line.rstrip() for line in svg.splitlines()) + "\n"
+    svg_path.write_text(svg, encoding="utf-8")
     plt.close(fig)
 
 
