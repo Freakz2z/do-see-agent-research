@@ -1,0 +1,20 @@
+{
+  "format": "dosee.public-gpt-image-provenance.v1",
+  "generator": "OpenAI built-in image generation tool (GPT-image)",
+  "generated_at": "2026-09-01",
+  "assets": [
+    {
+      "path": "figures/fig1_do_not_equal_see_gpt.png",
+      "purpose": "Conceptual editorial illustration of a shared local receipt and diverging protected states",
+      "prompt_summary": "Nature-style scientific editorial illustration; identical amber receipt; intact green branch and faulted red branch; no text, numbers, logos, watermark, or measurements",
+      "contains_quantitative_data": false
+    },
+    {
+      "path": "figures/fig3_p12_fault_conditioned_design_gpt.png",
+      "purpose": "Conceptual editorial illustration of the P12 matched counterfactual design",
+      "prompt_summary": "Nature-style scientific editorial illustration; same receipt entering parallel evidence paths; healthy authorization path and faulted hold path; no text, numbers, logos, watermark, or measurements",
+      "contains_quantitative_data": false
+    }
+  ],
+  "claim_boundary": "GPT-image assets are explanatory illustrations only. All numerical claims and exact arm labels remain in Matplotlib-generated figures and public JSON files."
+}

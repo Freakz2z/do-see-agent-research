@@ -312,12 +312,17 @@ def figure_3(plan: dict) -> None:
 
 def manifest() -> None:
     files = {}
-    for path in sorted(FIG_DIR.glob("fig*.svg")):
-        files[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
+    for pattern in ("fig*.svg", "fig*.png"):
+        for path in sorted(FIG_DIR.glob(pattern)):
+            files[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
     payload = {
         "format": "dosee.public-figure-manifest.v1",
         "source_files": [str(RESULTS.relative_to(ROOT)), str(PLAN.relative_to(ROOT))],
         "figures": files,
+        "rendering": {
+            "typeset_figures": "matplotlib",
+            "editorial_illustrations": "gpt-image",
+        },
         "generator": "scripts/generate_public_figures.py",
         "claim_boundary": "Figures use public aggregate/design metadata only; no raw behavioral content is rendered.",
     }
