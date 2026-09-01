@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+private/
+tmp/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.sqlite3-shm
+*.sqlite3-wal

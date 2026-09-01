@@ -1,0 +1,33 @@
+{
+  "format": "dosee.p11b-public-aggregate-result.v1",
+  "status": "complete_negative_natural_opportunity_result",
+  "census": {
+    "prefixes": 144,
+    "models": 3,
+    "task_families": 4,
+    "logical_chat_requests": 999,
+    "physical_chat_attempts": 999,
+    "transport_retries": 0
+  },
+  "opportunity_funnel": {
+    "trigger_audits": 1475,
+    "eligible_mutations": 880,
+    "proxy_positive_target_true": 434,
+    "proxy_positive_target_false": 0,
+    "proxy_negative_target_true": 0,
+    "proxy_negative_target_false": 446,
+    "prefixes_with_any_trigger_audit": 144,
+    "prefixes_with_eligible_mutation": 144,
+    "prefixes_with_proxy_positive_mutation": 144
+  },
+  "admissible_conclusion": "All prefixes were behaviorally active and proposed eligible changes, but no ordinary-prefix action decoupled the local success proxy from the protected target.",
+  "not_estimated": [
+    "false approval",
+    "causal-source recognition",
+    "natural fault incidence",
+    "production prevalence",
+    "agent safety"
+  ],
+  "source_provenance": "See the private result-seal and hash-bound audit in the non-public research workspace; raw behavioral envelopes are intentionally not redistributed.",
+  "external_provider_calls": 0
+}
