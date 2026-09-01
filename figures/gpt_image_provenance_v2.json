@@ -1,0 +1,28 @@
+{
+  "format": "dosee.public-gpt-image-provenance.v2",
+  "generator": "OpenAI built-in image generation tool (GPT-image)",
+  "generated_at": "2026-09-01",
+  "assets": [
+    {
+      "path": "figures/fig1_do_not_equal_see.png",
+      "purpose": "Complete Do ≠ See causal schematic",
+      "prompt_summary": "Nature-style scientific infographic with exact causal labels, evidence cards, branch semantics and claim-boundary footnote",
+      "contains_quantitative_data": false
+    },
+    {
+      "path": "figures/fig2_p11b_opportunity_funnel.png",
+      "purpose": "Complete P11-B ordinary-prefix census result figure",
+      "prompt_summary": "Nature-style scientific infographic with exact funnel counts, exact four-quadrant values, dangerous-cell callout, admissible conclusion and limitation line",
+      "contains_quantitative_data": true,
+      "source_of_truth": "results/p11b_public_aggregate_v1.json"
+    },
+    {
+      "path": "figures/fig3_p12_fault_conditioned_design.png",
+      "purpose": "Complete P12 fault-conditioned authorization design figure",
+      "prompt_summary": "Nature-style scientific infographic with exact four-step timeline, four fault families, six evidence arms, pilot/confirmatory counts, estimand and claim boundary",
+      "contains_quantitative_data": true,
+      "source_of_truth": "configs/p12_fault_conditioned_public_plan_v1.json"
+    }
+  ],
+  "claim_boundary": "The figures are direct GPT-image renderings with no post-generation text overlay. Numerical and design claims must be checked against the linked machine-readable JSON source files."
+}

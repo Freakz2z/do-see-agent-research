@@ -25,48 +25,34 @@ The release includes three publication-style figures. They are generated from
 the public aggregate and design JSON files only; no raw behavioral content is
 rendered.
 
-![Do not equal see: GPT-image scientific illustration](figures/fig1_do_not_equal_see_gpt.png)
+![Do not equal see: GPT-image scientific illustration](figures/fig1_do_not_equal_see.png)
 
-**Figure 1a. Do ≠ See — editorial illustration.** GPT-image visualizes the
-same receipt flowing into an intact and a faulted protected state. It is a
-conceptual illustration only; it contains no measurements or behavioral data.
+**Figure 1. Do ≠ See — complete GPT-image figure.** A successful local receipt
+can remain visible after a protected target becomes false. P12 holds the
+receipt fixed and varies the evidence available before the submit/hold
+decision. All labels are embedded directly in the generated image.
 
-![Do not equal see: typeset causal schematic](figures/fig1_do_not_equal_see.svg)
+![P11-B opportunity funnel and quadrants](figures/fig2_p11b_opportunity_funnel.png)
 
-**Figure 1b. Do ≠ See — exact schematic.** A successful local receipt can
-remain visible after a protected target becomes false. P12 holds the receipt
-fixed and varies the evidence available before the submit/hold decision. This
-typeset version is generated directly by the public Matplotlib script.
-
-![P11-B opportunity funnel and quadrants](figures/fig2_p11b_opportunity_funnel.svg)
-
-**Figure 2. P11-B ordinary-prefix census.** The dangerous proxy-positive /
-target-false cell is empty (0), so the natural-opportunity route cannot
-estimate false approval. The full aggregate is available at
+**Figure 2. P11-B ordinary-prefix census — complete GPT-image figure.** The
+dangerous proxy-positive / target-false cell is empty (0), so the
+natural-opportunity route cannot estimate false approval. All numeric values
+and labels are embedded directly in the generated image. The full aggregate is
+available at
 [results/p11b_public_aggregate_v1.json](results/p11b_public_aggregate_v1.json).
 
-![P12 fault-conditioned authorization: GPT-image illustration](figures/fig3_p12_fault_conditioned_design_gpt.png)
+![P12 fault-conditioned authorization design](figures/fig3_p12_fault_conditioned_design.png)
 
-**Figure 3a. P12 — editorial illustration.** GPT-image renders the matched
-counterfactual structure: the same receipt, two evidence paths, and a faulted
-protected state. It is a conceptual illustration only.
-
-![P12 fault-conditioned authorization design](figures/fig3_p12_fault_conditioned_design.svg)
-
-**Figure 3b. P12 — exact design schematic.** Four trusted post-receipt fault
+**Figure 3. P12 design — complete GPT-image figure.** Four trusted post-receipt fault
 families are paired with six evidence arms. The pilot is excluded from
 confirmation, and no live P12 behavioral result is claimed in this release.
-This typeset version is generated directly by the public Matplotlib script.
+All labels, arm names and sample counts are embedded directly in the generated
+image.
 
-To regenerate the figures locally (optional):
-
-```bash
-python3 -m pip install 'matplotlib>=3.8,<4'
-python3 scripts/generate_public_figures.py
-```
-
-See [figures/README.md](figures/README.md) for the figure manifest, GPT-image
-provenance, and design notes.
+The figure files are fixed GPT-image renderings. Exact numerical claims remain
+machine-readable in the public JSON inputs; the images themselves are
+explanatory publication assets. See [figures/README.md](figures/README.md) for
+the figure manifest, GPT-image provenance, and design notes.
 
 ## Reproduce the provider-free checks
 

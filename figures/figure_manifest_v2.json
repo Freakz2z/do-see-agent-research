@@ -1,0 +1,14 @@
+{
+  "format": "dosee.public-figure-manifest.v2",
+  "rendering": "gpt-image-direct",
+  "figures": {
+    "fig1_do_not_equal_see.png": "5e1b183e75f480e9cde7fb3f54566e1c9d1eaeae7233afa6fa2d4494e15dd6ab",
+    "fig2_p11b_opportunity_funnel.png": "33240935e25853118c114bc8a39288d181368b51f91d328128989b759b392d74",
+    "fig3_p12_fault_conditioned_design.png": "48f1820582103405a75ebff682a6cfaf6a9712291db768874c13950046c5026a"
+  },
+  "source_files": [
+    "results/p11b_public_aggregate_v1.json",
+    "configs/p12_fault_conditioned_public_plan_v1.json"
+  ],
+  "claim_boundary": "All labels and values are rendered directly by GPT-image; the machine-readable JSON files remain the source of truth for numerical and design metadata."
+}
