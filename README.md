@@ -42,6 +42,9 @@ files. Aggregate P11-B numbers are included with their claim boundary. The
 private research workspace retains the complete hash-bound audit needed for
 provenance review.
 
+Please see [CITATION.cff](CITATION.cff) for citation metadata. The repository
+is released under the MIT License.
+
 ## Status
 
 P11-B is complete and sealed as a negative natural-opportunity result. P12 is

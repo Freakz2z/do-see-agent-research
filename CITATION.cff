@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "Do ≠ See: Fault-Conditioned Authorization in Tool-Using Agents"
+message: "If you use this software or the public research design, please cite this repository."
+type: software
+authors:
+  - family-names: Freakz2z
+    given-names: Research Team
+repository-code: "https://github.com/Freakz2z/do-see-agent-research"
+url: "https://github.com/Freakz2z/do-see-agent-research"
+license: MIT
+version: 0.1.0
+date-released: 2026-09-01
