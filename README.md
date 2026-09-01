@@ -29,8 +29,8 @@ rendered.
 
 **Figure 1. Do ≠ See.** A successful local receipt can remain visible after a
 protected target becomes false. P12 holds the receipt fixed and varies the
-evidence available before the submit/hold decision. The editable source is
-[fig1_do_not_equal_see.drawio](figures/fig1_do_not_equal_see.drawio).
+evidence available before the submit/hold decision. The vector figure is
+generated directly by the public Matplotlib script.
 
 ![P11-B opportunity funnel and quadrants](figures/fig2_p11b_opportunity_funnel.svg)
 
@@ -43,8 +43,8 @@ estimate false approval. The full aggregate is available at
 
 **Figure 3. P12 design.** Four trusted post-receipt fault families are paired
 with six evidence arms. The pilot is excluded from confirmation, and no live
-P12 behavioral result is claimed in this release. The editable source is
-[fig3_p12_fault_conditioned_design.drawio](figures/fig3_p12_fault_conditioned_design.drawio).
+P12 behavioral result is claimed in this release. The vector figure is
+generated directly by the public Matplotlib script.
 
 To regenerate the figures locally (optional):
 

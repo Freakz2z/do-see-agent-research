@@ -10,10 +10,8 @@ from __future__ import annotations
 
 import hashlib
 import json
-import math
 import re
 from pathlib import Path
-from xml.sax.saxutils import escape
 
 import matplotlib
 
@@ -311,58 +309,6 @@ def figure_3(plan: dict) -> None:
     save(fig, "fig3_p12_fault_conditioned_design")
 
 
-def drawio_file(name: str, cells: list[str], width: int = 1400, height: int = 800) -> None:
-    """Write an editable draw.io source for the two conceptual diagrams."""
-    xml = """<?xml version="1.0" encoding="UTF-8"?>\n<mxfile host="drawio" version="26.0.0"><diagram name="Page-1"><mxGraphModel page="1" pageWidth="%d" pageHeight="%d"><root><mxCell id="0"/><mxCell id="1" parent="0"/>%s</root></mxGraphModel></diagram></mxfile>\n""" % (width, height, "".join(cells))
-    (FIG_DIR / name).write_text(xml, encoding="utf-8")
-
-
-def box_cell(cid, value, x, y, w, h, fill, stroke, parent="1"):
-    return (f'<mxCell id="{cid}" value="{escape(value)}" style="rounded=1;whiteSpace=wrap;html=1;'
-            f'fillColor={fill};strokeColor={stroke};fontFamily=Arial;fontSize=16;fontColor={INK};" vertex="1" parent="{parent}">'
-            f'<mxGeometry x="{x}" y="{y}" width="{w}" height="{h}" as="geometry"/></mxCell>')
-
-
-def edge_cell(cid, source, target, color=MUTED, dashed=False, label=""):
-    dash = "dashed=1;" if dashed else ""
-    return (f'<mxCell id="{cid}" value="{escape(label)}" style="edgeStyle=orthogonalEdgeStyle;rounded=1;'
-            f'orthogonalLoop=1;jettySize=auto;html=1;strokeColor={color};endArrow=block;{dash}" edge="1" parent="1" source="{source}" target="{target}">'
-            '<mxGeometry relative="1" as="geometry"/></mxCell>')
-
-
-def write_drawio_sources() -> None:
-    fig1 = [
-        box_cell("a", "A — action", 70, 260, 190, 90, TEAL_LIGHT, TEAL),
-        box_cell("r", "R — local success receipt", 360, 260, 230, 90, GOLD_LIGHT, GOLD),
-        box_cell("sp", "S+ — target true", 720, 160, 220, 90, GREEN_LIGHT, GREEN),
-        box_cell("sm", "S− — target false", 720, 360, 220, 90, RED_LIGHT, RED),
-        box_cell("d", "D — authorize / hold", 1050, 260, 230, 90, "#E7EAF0", NAVY),
-        edge_cell("e1", "a", "r", TEAL),
-        edge_cell("e2", "r", "sp", GREEN, label="consistent state"),
-        edge_cell("e3", "r", "sm", RED, label="partial fault"),
-        edge_cell("e4", "sp", "d", GREEN),
-        edge_cell("e5", "sm", "d", RED, dashed=True, label="dangerous path"),
-        box_cell("l0", "L0 — value-only", 130, 560, 220, 75, "#F1F3F5", "#9AA7B3"),
-        box_cell("l2", "L2 — causal lineage", 440, 560, 220, 75, TEAL_LIGHT, TEAL),
-        box_cell("l4", "L4 — target binding", 750, 560, 220, 75, GREEN_LIGHT, GREEN),
-    ]
-    drawio_file("fig1_do_not_equal_see.drawio", fig1)
-    fig3 = [
-        box_cell("s1", "1. action receipt", 80, 120, 220, 90, TEAL_LIGHT, TEAL),
-        box_cell("s2", "2. trusted partial fault", 380, 120, 240, 90, RED_LIGHT, RED),
-        box_cell("s3", "3. evidence condition", 700, 120, 230, 90, GOLD_LIGHT, GOLD),
-        box_cell("s4", "4. submit / hold", 1010, 120, 220, 90, GREEN_LIGHT, GREEN),
-        edge_cell("p1", "s1", "s2", MUTED), edge_cell("p2", "s2", "s3", MUTED), edge_cell("p3", "s3", "s4", MUTED),
-        box_cell("a1", "L0 echo", 380, 330, 200, 70, "#F1F3F5", "#9AA7B3"),
-        box_cell("a2", "L0 erased", 610, 330, 200, 70, "#F1F3F5", "#9AA7B3"),
-        box_cell("a3", "L2 echo", 380, 450, 200, 70, TEAL_LIGHT, TEAL),
-        box_cell("a4", "L2 erased", 610, 450, 200, 70, TEAL_LIGHT, TEAL),
-        box_cell("a5", "L4 echo", 380, 570, 200, 70, GREEN_LIGHT, GREEN),
-        box_cell("a6", "L4 verified", 610, 570, 200, 70, GOLD_LIGHT, GOLD),
-    ]
-    drawio_file("fig3_p12_fault_conditioned_design.drawio", fig3)
-
-
 def manifest() -> None:
     files = {}
     for path in sorted(FIG_DIR.glob("fig*.svg")):
@@ -384,7 +330,6 @@ def main() -> None:
     figure_1()
     figure_2(aggregate)
     figure_3(plan)
-    write_drawio_sources()
     manifest()
     print("Generated public figures in", FIG_DIR)
 

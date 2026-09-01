@@ -6,7 +6,7 @@
   ],
   "figures": {
     "fig1_do_not_equal_see.svg": "a72256731606844a8188857be8ef3ebcc261a3c4de66fc4355a4f31808c3fc68",
-    "fig2_p11b_opportunity_funnel.svg": "6e61211500020381fff7d78d5b7d8d8172c5e3868d047d3424091b8dacdfe020",
+    "fig2_p11b_opportunity_funnel.svg": "bf2918382818480483ccd32c86e1ce92f26eb7e5f58a66444e9c99ef302301a4",
     "fig3_p12_fault_conditioned_design.svg": "cf6ac7fde767ed5abdc663e346ee1b72ba8889b79f7215f9ac9d3e948d6fe89f"
   },
   "generator": "scripts/generate_public_figures.py",

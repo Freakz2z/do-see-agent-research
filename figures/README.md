@@ -2,8 +2,8 @@
 
 This directory contains the figures used by the public Do ≠ See release.
 `*.svg` files are the primary, publication-ready vector artifacts; matching
-`*.png` files are provided for previews and slide decks. The two `*.drawio`
-files are editable conceptual sources for diagrams 1 and 3.
+`*.png` files are provided for previews and slide decks. All rendered assets are
+generated with Matplotlib from public, sanitized inputs.
 
 ## Provenance
 
